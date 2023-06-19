@@ -1,0 +1,63 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
+        <ContentTargetFolders>.</ContentTargetFolders>
+        <Product>Nikander.Umbraco.VariantCopy</Product>
+        <PackageId>Nikander.Umbraco.VariantCopy</PackageId>
+        <Title>Nikander.Umbraco.VariantCopy</Title>
+        <Authors>Lars Nikander Frandsen</Authors>
+        <Description>An Umbraco plugin to copy variant content between cultures.</Description>
+        <PackageTags>umbraco plugin package</PackageTags>
+        <Version>0.1.1</Version>
+    </PropertyGroup>
+
+
+    <ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
+        <PackageReference Include="Umbraco.Cms.Web.Website" Version="[9.0.1,11.0.0)" />
+        <PackageReference Include="Umbraco.Cms.Web.BackOffice" Version="[9.0.1,11.0.0)" />
+    </ItemGroup>
+
+    <ItemGroup Condition="'$(TargetFramework)' == 'net7.0'">
+        <PackageReference Include="Umbraco.Cms.Web.Website" Version="[10.0.0,12.0.0)" />
+        <PackageReference Include="Umbraco.Cms.Web.BackOffice" Version="[10.0.0,12.0.0)" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Content Include="App_Plugins\Nikander.Umbraco.VariantCopy\**\*.*">
+            <CopyToPublishDirectory>Always</CopyToPublishDirectory>
+            <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+        </Content>
+        <None Include="buildTransitive\**" Pack="true" PackagePath="buildTransitive" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Remove="nuget\**" />
+      <EmbeddedResource Remove="nuget\**" />
+      <None Remove="nuget\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="buildTransitive\Nikander.Umbraco.VariantCopy.targets" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="buildTransitive\Nikander.Umbraco.VariantCopy.targets">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Content Update="App_Plugins\Nikander.Umbraco.VariantCopy\html\variants_add.html">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+        <Content Update="App_Plugins\Nikander.Umbraco.VariantCopy\js\variants.controller.js">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+        <Content Update="App_Plugins\Nikander.Umbraco.VariantCopy\Lang\en-US.xml">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+        <Content Update="App_Plugins\Nikander.Umbraco.VariantCopy\package.manifest">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+    </ItemGroup>
+</Project>

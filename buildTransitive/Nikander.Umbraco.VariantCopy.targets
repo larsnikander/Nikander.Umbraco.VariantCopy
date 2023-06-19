@@ -1,0 +1,21 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <NikanderUmbracoVariantCopyContentFilesPath>$(MSBuildThisFileDirectory)..\App_Plugins\Nikander.Umbraco.VariantCopy\**\*.*</NikanderUmbracoVariantCopyContentFilesPath>
+  </PropertyGroup>
+
+  <Target Name="CopyNikanderUmbracoVariantCopyAssets" BeforeTargets="Build">
+    <ItemGroup>
+      <NikanderUmbracoVariantCopyContentFiles Include="$(NikanderUmbracoVariantCopyContentFilesPath)" />
+    </ItemGroup>
+    <Message Text="Copying Nikander.Umbraco.VariantCopy files: $(NikanderUmbracoVariantCopyContentFilesPath) - #@(NikanderUmbracoVariantCopyContentFiles->Count()) files" Importance="high" />
+    <Copy SourceFiles="@(NikanderUmbracoVariantCopyContentFiles)" DestinationFiles="@(NikanderUmbracoVariantCopyContentFiles->'$(MSBuildProjectDirectory)\App_Plugins\Nikander.Umbraco.VariantCopy\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" />
+  </Target>
+
+  <Target Name="ClearNikanderUmbracoVariantCopyAssets" BeforeTargets="Clean">
+    <ItemGroup>
+      <NikanderUmbracoVariantCopyDir Include="$(MSBuildProjectDirectory)\App_Plugins\Nikander.Umbraco.VariantCopy\" />
+    </ItemGroup>
+    <Message Text="Clear old Nikander.Umbraco.VariantCopy data" Importance="high" />
+    <RemoveDir Directories="@(NikanderUmbracoVariantCopyDir)" />
+  </Target>
+</Project>

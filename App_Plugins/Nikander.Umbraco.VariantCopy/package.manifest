@@ -1,0 +1,8 @@
+﻿{
+    "name": "Nikander.Umbraco.VariantCopy",
+    "version": "0.1.1",
+    "allowPackageTelemetry": false,
+    "javascript": [
+        "~/App_Plugins/Nikander.Umbraco.VariantCopy/js/variants.controller.js"
+    ]
+}
