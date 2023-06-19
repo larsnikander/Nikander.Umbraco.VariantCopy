@@ -9,6 +9,9 @@
         <Description>An Umbraco plugin to copy variant content between cultures.</Description>
         <PackageTags>umbraco plugin package</PackageTags>
         <Version>0.1.5</Version>
+        <PackageReadmeFile>readme.md</PackageReadmeFile>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <RepositoryUrl>https://github.com/larsnikander/Nikander.Umbraco.VariantCopy</RepositoryUrl>
     </PropertyGroup>
 
 
@@ -28,6 +31,7 @@
             <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
         </Content>
         <None Include="buildTransitive\**" Pack="true" PackagePath="buildTransitive" />
+        <None Include="readme.md" Pack="true" PackagePath="\"/>
     </ItemGroup>
 
     <ItemGroup>
