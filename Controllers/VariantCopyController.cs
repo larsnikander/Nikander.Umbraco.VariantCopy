@@ -47,8 +47,6 @@ namespace Nikander.Umbraco.VariantCopy.Controllers
 
         public VariantResult CreateContentVariants(int? nodeId, bool includeChilderen, string fromCulture, string toCulture)
         {
-            try
-            {
 
                 if (string.IsNullOrEmpty(fromCulture))
                 {
@@ -88,7 +86,9 @@ namespace Nikander.Umbraco.VariantCopy.Controllers
                     foreach (var property in content.Properties)
                     {
 
-                        var value = property.Values.FirstOrDefault(x => x.Culture.Equals(fromCulture, StringComparison.InvariantCultureIgnoreCase))?.PublishedValue;
+                        var value = property
+                            .Values
+                            .FirstOrDefault(x => x.Culture != null && x.Culture.Equals(fromCulture, StringComparison.InvariantCultureIgnoreCase))?.PublishedValue;
                         if (value is not null)
                         {
                             try
@@ -104,13 +104,6 @@ namespace Nikander.Umbraco.VariantCopy.Controllers
 
                 return OkResult();
 
-            }
-            catch (Exception e)
-            {
-
-
-                return ErrorResult(e.Message);
-            }
         }
         private VariantResult ErrorResult(string message)
         {

@@ -14,7 +14,6 @@
         },
         url: "backoffice/Nikander/VariantCopy/RetrieveCultures/"
     }).then((response) => {
-        console.log(response.data);
         vm.contentCultures = response.data;
         vm.publishedCultures = vm.contentCultures.filter(cultureSetting => cultureSetting.IsPublished);
         vm.fromCulture = vm.publishedCultures[0].IsoCode;
@@ -22,10 +21,9 @@
         vm.busy = false;
     })
 
-    vm.variantCopy = async function (nodeId) {
+    vm.variantCopy = function (nodeId) {
         vm.busy = true;
-
-        var result =  await $http({
+        $http({
             method: "GET",
             params: {
                 nodeId: nodeId,
@@ -34,23 +32,20 @@
                 toCulture: vm.toCulture
             },
             url: "backoffice/Nikander/VariantCopy/CreateContentVariants/"
+        }).then((response) => {
+            vm.busy = false;
+
+            if (response.data.IsSucces) {
+                vm.success = true;
+            }
+            else {
+                vm.errorMessage = response.data.Error.Message;
+                vm.error = true;
+            }
         });
-
-        if (result.data.IsSucces) {
-            vm.success = true;
-        }
-        else {
-            vm.errorMessage = result.data.Error.Message;
-            vm.error = true;
-        }
-
-        vm.busy = false;
     }
     vm.closeDialog = function () {
         navigationService.hideDialog();
         location.reload();
-    };
-    vm.includeChilderenClick = function () {
-        vm.includeChilderen = !vm.includeChilderen
     };
 });

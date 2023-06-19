@@ -8,7 +8,7 @@
         <Authors>Lars Nikander Frandsen</Authors>
         <Description>An Umbraco plugin to copy variant content between cultures.</Description>
         <PackageTags>umbraco plugin package</PackageTags>
-        <Version>0.1.1</Version>
+        <Version>0.1.5</Version>
     </PropertyGroup>
 
 
