@@ -1,0 +1,23 @@
+{
+    "$schema": "https://marketplace.umbraco.com/umbraco-marketplace-schema.json",
+    "AuthorDetails": {
+        "Name": "Lars Nikander Frandsen",
+        "Description": "Lead Programmer at Vertica A/S",
+        "Url": "https://github.com/larsnikander/Nikander.Umbraco.Variantcopy",
+        "ImageUrl": "https://avatars.githubusercontent.com/u/9084129",
+        "Contributors": [
+            {
+                "Name": "Lars Nikander Frandsen",
+                "Url": "https://github.com/larsnikander"
+            }
+        ],
+        "SyncContributorsFromRepository": "true"
+    },
+    "Category": "Editor Tools",
+    "Description": "Enables editors to copy language variants from one culture to another",
+    "LicenseTypes": [ "MIT" ],
+    "PackageType": "Package",
+    "Tags": [ "Language Variants", "Copy", "Editor", "Plugin In", "Multi Language" ],
+    "Title": "Variant Copy",    
+    "VideoUrl": "https://youtu.be/DBmITKFwgU8"
+}
