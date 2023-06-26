@@ -23,3 +23,9 @@ services.AddUmbraco(_env, _config)
 .AddVariantCopyPlugin()
 .Build();
 ```
+
+# Demo
+
+The plugin adds a new menu item for content that allows the editor to copy from a published culture to other cultures.
+
+https://www.youtube.com/watch?v=DBmITKFwgU8
