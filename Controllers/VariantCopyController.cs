@@ -77,7 +77,7 @@ namespace Nikander.Umbraco.VariantCopy.Controllers
 
                 if (includeChilderen)
                 {
-                    contentItems.AddRange(_contentService.GetPagedChildren(contentItem.Id, 0, 1000000, out long totalRecords));
+                    contentItems.AddRange(_contentService.GetPagedDescendants(contentItem.Id, 0, 1000000, out long totalRecords));
                 }
 
                 foreach (var content in contentItems)

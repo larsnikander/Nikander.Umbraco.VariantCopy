@@ -8,7 +8,7 @@
         <Authors>Lars Nikander Frandsen</Authors>
         <Description>An Umbraco plugin to copy variant content between cultures.</Description>
         <PackageTags>umbraco plugin package umbraco-marketplace</PackageTags>
-        <Version>0.1.6</Version>
+        <Version>0.1.7</Version>
         <PackageReadmeFile>readme.md</PackageReadmeFile>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <RepositoryUrl>https://github.com/larsnikander/Nikander.Umbraco.VariantCopy</RepositoryUrl>
