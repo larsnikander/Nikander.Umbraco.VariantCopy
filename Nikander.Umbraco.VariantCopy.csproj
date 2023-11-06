@@ -13,8 +13,7 @@
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <RepositoryUrl>https://github.com/larsnikander/Nikander.Umbraco.VariantCopy</RepositoryUrl>
     </PropertyGroup>
-
-
+    
     <ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
         <PackageReference Include="Umbraco.Cms.Web.Website" Version="[9.0.1,11.0.0)" />
         <PackageReference Include="Umbraco.Cms.Web.BackOffice" Version="[9.0.1,11.0.0)" />
@@ -31,7 +30,7 @@
             <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
         </Content>
         <None Include="buildTransitive\**" Pack="true" PackagePath="buildTransitive" />
-        <None Include="readme.md" Pack="true" PackagePath="\"/>
+        <None Include="readme.md" Pack="true" PackagePath="\" />
     </ItemGroup>
 
     <ItemGroup>
