@@ -5,7 +5,8 @@ Umbraco Plugin for copying content from one variant to another.
 inspired by https://github.com/jkulker/TFE.CopyVariantContent
 
 # Getting Started
-This package is supported on Umbraco 9, 10 and 11
+This package is supported on 10 and 11
+Use 0.1.7 for Umbraco 9 support
 
 # Installation
 
