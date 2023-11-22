@@ -8,20 +8,20 @@
         <Authors>Lars Nikander Frandsen</Authors>
         <Description>An Umbraco plugin to copy variant content between cultures.</Description>
         <PackageTags>umbraco plugin package umbraco-marketplace</PackageTags>
-        <Version>0.1.7</Version>
+        <Version>0.1.8</Version>
         <PackageReadmeFile>readme.md</PackageReadmeFile>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <RepositoryUrl>https://github.com/larsnikander/Nikander.Umbraco.VariantCopy</RepositoryUrl>
     </PropertyGroup>
     
     <ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
-        <PackageReference Include="Umbraco.Cms.Web.Website" Version="[9.0.1,11.0.0)" />
-        <PackageReference Include="Umbraco.Cms.Web.BackOffice" Version="[9.0.1,11.0.0)" />
+        <PackageReference Include="Umbraco.Cms.Web.Website" Version="[10.0.1,11.0.0)" />
+        <PackageReference Include="Umbraco.Cms.Web.BackOffice" Version="[10.0.1,11.0.0)" />
     </ItemGroup>
 
     <ItemGroup Condition="'$(TargetFramework)' == 'net7.0'">
-        <PackageReference Include="Umbraco.Cms.Web.Website" Version="[10.0.0,12.0.0)" />
-        <PackageReference Include="Umbraco.Cms.Web.BackOffice" Version="[10.0.0,12.0.0)" />
+        <PackageReference Include="Umbraco.Cms.Web.Website" Version="[10.0.1,12.0.0)" />
+        <PackageReference Include="Umbraco.Cms.Web.BackOffice" Version="[10.0.1,12.0.0)" />
     </ItemGroup>
 
     <ItemGroup>
